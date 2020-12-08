@@ -40,7 +40,7 @@ export const productDetailsReducer = (
     case PRODUCT_DETAILS_FAIL:
       return {
         loading: false,
-        product: action.payload,
+        error: action.payload,
       };
     default:
       return state;
