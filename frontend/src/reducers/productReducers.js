@@ -1,15 +1,15 @@
-import {
-  PRODUCT_DETAILS_FAIL,
-  PRODUCT_DETAILS_REQUEST,
-  PRODUCT_DETAILS_SUCCESS,
-  PRODUCT_LIST_FAIL,
+const {
   PRODUCT_LIST_REQUEST,
   PRODUCT_LIST_SUCCESS,
-} from "../constants/productConstants";
+  PRODUCT_LIST_FAIL,
+  PRODUCT_DETAILS_REQUEST,
+  PRODUCT_DETAILS_SUCCESS,
+  PRODUCT_DETAILS_FAIL,
+} = require('../constants/productConstants');
 
 export const productListReducer = (
   state = { loading: true, products: [] },
-  action,
+  action
 ) => {
   switch (action.type) {
     case PRODUCT_LIST_REQUEST:
@@ -25,23 +25,15 @@ export const productListReducer = (
 
 export const productDetailsReducer = (
   state = { product: {}, loading: true },
-  action,
+  action
 ) => {
   switch (action.type) {
     case PRODUCT_DETAILS_REQUEST:
-      return {
-        loading: true,
-      };
+      return { loading: true };
     case PRODUCT_DETAILS_SUCCESS:
-      return {
-        loading: false,
-        product: action.payload,
-      };
+      return { loading: false, product: action.payload };
     case PRODUCT_DETAILS_FAIL:
-      return {
-        loading: false,
-        error: action.payload,
-      };
+      return { loading: false, error: action.payload };
     default:
       return state;
   }
