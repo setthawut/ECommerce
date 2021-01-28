@@ -6,7 +6,7 @@ import {
   ORDER_DETAILS_FAIL,
   ORDER_DETAILS_REQUEST,
   ORDER_DETAILS_SUCCESS,
-} from '../constants/orderConstants';
+} from "../constants/orderConstants";
 
 export const orderCreateReducer = (state = {}, action) => {
   switch (action.type) {
@@ -23,10 +23,7 @@ export const orderCreateReducer = (state = {}, action) => {
   }
 };
 
-export const orderDetailsReducer = (
-  state = { loading: true, order: {} },
-  action
-) => {
+export const orderDetailsReducer = (state = { loading: true }, action) => {
   switch (action.type) {
     case ORDER_DETAILS_REQUEST:
       return { loading: true };
